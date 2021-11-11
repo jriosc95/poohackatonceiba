@@ -28,7 +28,7 @@ pub struct DB {
 impl Settings {
     pub fn load() -> Result<Self, ConfigError> {
         let mut settings = Config::new();
-        settings.merge(File::with_name("./configuration/src/application.yaml"))?;
+        settings.merge(File::with_name("./configuration/application.yaml"))?;
 
         println!("debug: {:?}", settings.get_bool("debug"));
         println!("web: {:?}", settings.get::<Web>("web"));

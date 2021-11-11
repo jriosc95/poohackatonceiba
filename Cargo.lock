@@ -571,6 +571,8 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "datetime",
+ "serde 1.0.130",
+ "serde_derive",
 ]
 
 [[package]]
@@ -914,12 +916,14 @@ version = "0.1.0"
 dependencies = [
  "actix-rt 2.4.0",
  "actix-web",
+ "anyhow",
  "config",
  "domain",
  "include-sql",
  "postgres",
  "serde 1.0.130",
  "serde_derive",
+ "serde_json",
 ]
 
 [[package]]
