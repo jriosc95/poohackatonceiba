@@ -3,7 +3,6 @@ use include_sql::include_sql;
 use postgres::{Client, Error, NoTls};
 use serde::Deserialize;
 
-
 include_sql!("domain/src/resources/schema.sql", "$");
 
 #[derive(Debug, Deserialize)]
@@ -28,7 +27,7 @@ pub struct DB {
 impl Settings {
     pub fn load() -> Result<Self, ConfigError> {
         let mut settings = Config::new();
-        settings.merge(File::with_name("./configuration/application.yaml"))?;
+        settings.merge(File::with_name("configuration/application.yaml"))?;
 
         println!("debug: {:?}", settings.get_bool("debug"));
         println!("web: {:?}", settings.get::<Web>("web"));
