@@ -16,7 +16,10 @@ impl PersonRepository for PersonRepositoryImpl {
     }
 
     fn insert(&self, person: Person) -> Result<String, anyhow::Error> {
-        Ok(self.create_person(&person).unwrap())
+        match self.create_person(&person){
+            Ok(dni) => Ok(dni),
+            Err(e) => Err(e)
+        }
     }
 
     fn update(&self, person: Person) -> Result<String, anyhow::Error> {
